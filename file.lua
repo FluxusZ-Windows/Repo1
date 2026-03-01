@@ -530,6 +530,228 @@ SettingsSection:Dropdown({
     end
 })
 
+-- [ Shop Tab ] --
+local ShopTab = Window:Tab({
+    Title = "Shop",
+    Desc = "Shop Tab", -- optional
+
+    Icon = "shopping-basket",
+    IconColor = Pink, -- Color3.fromRGB(255, 100, 100)  custom icon color. optional
+    IconShape = "Square", -- "Square" or "Circle". optional
+    -- IconThemed = true, -- use theme colors. optional
+
+    Locked = false, -- disable tab interaction. optional
+    ShowTabTitle = false, -- show title inside tab. optional
+    Border = true, -- add border around tab. optional
+})
+
+-- [ Fighting Styles Section ] --
+local FightingStylesSection = ShopTab:Section({
+    Title = "Fighting Styles",
+    Desc = "You can buy Fighting Styles", -- optional
+    Icon = "hand-fist", -- lucide icon or "rbxassetid://". optional
+    IconColor = Pink, -- custom icon color. optional
+    TextSize = 19, -- title text size. optional
+    TextXAlignment = "Left", -- "Left", "Center", "Right". optional
+    Box = false, -- show box around section. optional
+    BoxBorder = true, -- show border on box. optional
+    Opened = true, -- section expanded by default. optional
+    FontWeight = Enum.FontWeight.SemiBold, -- title font weight. optional
+    DescFontWeight = Enum.FontWeight.Medium, -- description font weight. optional
+    TextTransparency = 0.05, -- title transparency. optional
+    DescTextTransparency = 0.4, -- description transparency. optional
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Dark Step",
+    Desc = "$150,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/1/11/DarkStepA.png/revision/latest?cb=20230429200337&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyBlackLeg")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Electro",
+    Desc = "$500,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/3/36/ElectricA.png/revision/latest?cb=20221018092049&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyElectro")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Water Kung Fu",
+    Desc = "$750,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/b/b0/WaterKungFuA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyWaterKungFu")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Dragon Claw",
+    Desc = "F’1,500",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/8/8e/DragonClawA.png/revision/latest?cb=20221018092047&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "1")
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "2")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Superhuman",
+    Desc = "$3,000,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/c/cf/SuperhumanA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuySuperhuman")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Death Step",
+    Desc = "$5,000,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/7/7a/DeathStepA.png/revision/latest?cb=20221018092046&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyDeathStep")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Sharkman Karate",
+    Desc = "$2,500,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/d/d8/SharkmanKarateA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuySharkmanKarate", true)
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Electric Claw",
+    Desc = "$3,000,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/6/60/ElectricClawA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyElectricClaw")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Dragon Talon",
+    Desc = "$3,000,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/5/57/DragonTalonA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyDragonTalon")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "God Human",
+    Desc = "$5,000,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/9/9f/GodhumanA.png/revision/latest?cb=20221018092050&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuyGodhuman")
+            end
+        }
+    }
+})
+
+FightingStylesSection:Paragraph({
+    Title = "Sanguine Art",
+    Desc = "$5,000,000\nF’5,000",
+    Image = "https://static.wikia.nocookie.net/blox-fruits/images/8/8b/SanguineArtA.png/revision/latest?cb=20231025181048&path-prefix=ru",
+    ImageSize = 65,
+
+    Buttons = {
+        {
+            Title = "Buy",
+            Icon = "circle-dollar-sign",
+            Callback = function()
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuySanguineArt", true)
+                (game:GetService("ReplicatedStorage")).Remotes.CommF_:InvokeServer("BuySanguineArt")
+            end
+        }
+    }
+})
+
 -- [ Teleport Tab ] --
 local TeleportTab = Window:Tab({
     Title = "Teleport",
